@@ -1,0 +1,29 @@
+{
+  "name": "@collaborar/vite-plugin-lingui",
+  "version": "0.1.0",
+  "scripts": {
+    "prepublish": "npm run build",
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "format": "prettier --write ."
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "minimatch": "^10.0.3",
+    "prettier": "^3.6.2",
+    "rollup": "^4.50.0",
+    "unbuild": "^3.6.1",
+    "vite": "^7.0.0"
+  }
+}

@@ -9,24 +9,28 @@ const execAsync = promisify(exec);
 
 let context: PluginContext;
 
+interface CommandOptions {
+  locales?: string[];
+}
+
 interface LinguiOptions {
-  langPath?: string;
+  path?: string;
   command?: string;
 }
 
 export const lingui = ({
-  langPath = "lang",
+  path = "lang",
   command = "php artisan lingui:make-json",
 }: LinguiOptions = {}): Plugin => {
-  const args: string[] = [];
-
-  if (langPath) {
-    args.push(langPath);
-  }
-
-  const runCommand = async () => {
+  const runCommand = async ({ locales = [] }: CommandOptions = {}) => {
     try {
-      await execAsync(`${command} ${args.join(" ")}`);
+      const args: string[] = [];
+
+      if (locales.length > 0) {
+        args.push(...locales.map((locale) => `--locale=${locale}`));
+      }
+
+      await execAsync(`${command} ${path} ${args.join(" ")}`);
     } catch (error) {
       context.error(`Error executing command: ${error}`);
     }
@@ -41,11 +45,22 @@ export const lingui = ({
       return runCommand();
     },
     async handleHotUpdate({ file, server }) {
-      if (shouldRun(langPath, { file, server })) {
-        await runCommand();
+      if (shouldRun(path, { file, server })) {
+        await runCommand({
+          locales: getLocalesFromPath(file),
+        });
       }
     },
   };
+};
+
+const getLocalesFromPath = (path: string): string[] => {
+  const localeMatch = path.match(/\/lang\/([^\/]+)/);
+  const locale = localeMatch
+    ? localeMatch[1].replace(/\.json$/, "")
+    : undefined;
+
+  return locale ? [locale] : [];
 };
 
 const shouldRun = (
@@ -53,7 +68,7 @@ const shouldRun = (
   opts: Pick<HmrContext, "file" | "server">,
 ): boolean => {
   const file = opts.file.replaceAll("\\", "/");
-  const patterns = [`${path}/**/*.php`, `${path}/*.json`];
+  const patterns = [`${path}/*.json`, `${path}/**/*.php`];
 
   return patterns.some((pattern) => {
     pattern = osPath

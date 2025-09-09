@@ -23,12 +23,14 @@ Before contributing, please:
 ## Development Setup
 
 1. **Clone your fork:**
+
    ```sh
    git clone https://github.com/YOUR_USERNAME/vite-plugin-lingui.git
    cd vite-plugin-lingui
    ```
 
 2. **Install dependencies:**
+
    ```sh
    pnpm install
    ```
@@ -42,6 +44,7 @@ Before contributing, please:
 ## Making Changes
 
 1. **Create a feature branch:**
+
    ```sh
    git checkout -b feature/your-feature-name
    # or
@@ -54,6 +57,7 @@ Before contributing, please:
    - Follow existing code patterns and conventions
 
 3. **Build the project:**
+
    ```sh
    pnpm run build
    ```
@@ -73,25 +77,27 @@ Currently, the project uses manual testing. When making changes:
 4. Check that TypeScript types are correct
 
 Example test setup:
+
 ```ts
 // vite.config.ts
-import { defineConfig } from 'vite'
-import { lingui } from '@collaborar/vite-plugin-lingui'
+import { defineConfig } from "vite";
+import { lingui } from "@collaborar/vite-plugin-lingui";
 
 export default defineConfig({
   plugins: [
     lingui({
       // Test different configurations
-      path: 'custom/lang/path',
-      command: 'herd php artisan lingui:make-json'
-    })
-  ]
-})
+      path: "custom/lang/path",
+      command: "herd php artisan lingui:make-json",
+    }),
+  ],
+});
 ```
 
 ## Submitting Changes
 
 1. **Push your branch:**
+
    ```sh
    git push origin feature/your-feature-name
    ```
@@ -135,6 +141,7 @@ When reporting issues, please include:
 ## Questions?
 
 If you have questions about contributing, feel free to:
+
 - Open an issue for discussion
 - Check existing issues and pull requests
 - Reach out to the maintainers

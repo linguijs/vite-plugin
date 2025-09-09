@@ -22,7 +22,7 @@ export default defineConfig({
   plugins: [
     lingui({
       path: "my/custom/path/to/lang/files",
-      command: "herd php artisan lingui:generate",
+      command: "herd php artisan lingui:make-json",
     }),
     // ...
   ],

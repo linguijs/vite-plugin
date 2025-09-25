@@ -1,9 +1,9 @@
 # Lingui Vite Plugin
 
-Vite plugin for [Lingui](https://github.com/collaborar/lingui).
+Vite plugin for [Lingui Laravel](https://github.com/linguijs/lingui-laravel).
 
 ```ts
-import { lingui } from "@collaborar/vite-plugin-lingui";
+import { lingui } from "@linguijs/vite-plugin-lingui";
 
 export default defineConfig({
   plugins: [
@@ -16,7 +16,7 @@ export default defineConfig({
 All options have sensible defaults, but should you need to customize anything:
 
 ```ts
-import { lingui } from "@collaborar/vite-plugin-lingui";
+import { lingui } from "@linguijs/vite-plugin-lingui";
 
 export default defineConfig({
   plugins: [

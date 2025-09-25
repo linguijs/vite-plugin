@@ -21,7 +21,7 @@ import { lingui } from "@linguijs/vite-plugin-lingui";
 export default defineConfig({
   plugins: [
     lingui({
-      path: 'my/custom/path/to/lang/files',
+      outPath: 'my/custom/path/to/output/lang/files',
       command: 'herd php artisan lingui:make-json',
     }),
     // ...

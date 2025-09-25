@@ -2,7 +2,7 @@
   "name": "@linguijs/vite-plugin-lingui",
   "version": "0.1.0",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "pnpm run build",
     "dev": "unbuild --stub",
     "build": "unbuild",
     "format": "prettier --write ."
@@ -18,12 +18,14 @@
     }
   },
   "license": "MIT",
+  "peerDependencies": {
+    "vite": "^7.0.0"
+  },
   "devDependencies": {
     "@types/node": "^22",
     "minimatch": "^10.0.3",
     "prettier": "^3.6.2",
     "rollup": "^4.50.0",
-    "unbuild": "^3.6.1",
-    "vite": "^7"
+    "unbuild": "^3.6.1"
   }
 }

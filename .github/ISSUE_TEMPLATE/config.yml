@@ -2,4 +2,4 @@ blank_issues_enabled: false
 contact_links:
   - name: Feature request
     url: https://github.com/collaborar/vite-plugin-lingui/pulls
-    about: "For ideas or feature requests, send in a pull request"
+    about: 'For ideas or feature requests, send in a pull request'

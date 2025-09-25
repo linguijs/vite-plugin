@@ -80,15 +80,15 @@ Example test setup:
 
 ```ts
 // vite.config.ts
-import { defineConfig } from "vite";
-import { lingui } from "@collaborar/vite-plugin-lingui";
+import { defineConfig } from 'vite';
+import { lingui } from '@collaborar/vite-plugin-lingui';
 
 export default defineConfig({
   plugins: [
     lingui({
       // Test different configurations
-      path: "custom/lang/path",
-      command: "herd php artisan lingui:make-json",
+      path: 'custom/lang/path',
+      command: 'herd php artisan lingui:make-json',
     }),
   ],
 });

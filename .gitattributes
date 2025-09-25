@@ -1,0 +1,33 @@
+* text=auto eol=lf
+
+# Diffs
+*.blade.php diff=html
+*.css       diff=css
+*.html      diff=html
+*.md        diff=markdown
+*.php       diff=php
+
+# Merges
+package-lock.json merge=ours
+composer.lock     merge=ours
+
+# general files
+./.editorconfig export-ignore
+./.gitattributes export-ignore
+./.gitignore export-ignore
+./.prettierrc export-ignore
+./.eslintrc export-ignore
+./CHANGELOG.md
+
+# lock files
+./yarn.lock export-ignore
+./package-lock.json export-ignore
+./pnpm-lock.yaml export-ignore
+
+# build files
+./build.config.ts
+
+# folders
+./.github
+./tests
+./src

@@ -21,6 +21,8 @@ import { lingui } from '@linguijs/vite-plugin-lingui';
 export default defineConfig({
   plugins: [
     lingui({
+      locales: ['en', 'pt'],
+      langPath: 'lang',
       outPath: 'my/custom/path/to/output/lang/files',
       command: 'herd php artisan lingui:make-json',
     }),
@@ -28,3 +30,6 @@ export default defineConfig({
   ],
 });
 ```
+
+## License
+The Lingui Vite Plugin is open-sourced software licensed under the [MIT license](LICENSE.md).

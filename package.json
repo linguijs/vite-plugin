@@ -1,6 +1,6 @@
 {
   "name": "@linguijs/vite-plugin-lingui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "prepublish": "pnpm run build",
     "dev": "unbuild --stub",

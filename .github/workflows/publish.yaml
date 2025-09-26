@@ -14,11 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22.x'
-          registry-url: 'https://registry.npmjs.org'
-
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -28,6 +23,6 @@ jobs:
         run: pnpm install
 
       - name: Publish
-        run: ls -la && pnpm publish --access public
+        run: pnpm publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}

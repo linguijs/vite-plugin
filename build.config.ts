@@ -3,7 +3,7 @@ import { defineBuildConfig } from 'unbuild';
 export default defineBuildConfig({
   clean: true,
   declaration: true,
-  externals: ['rollup', 'vite', 'minimatch', '@isaacs/brace-expansion', '@isaacs/balanced-match'],
+  externals: ['rollup', 'vite'],
   failOnWarn: false,
   rollup: {
     emitCJS: true,

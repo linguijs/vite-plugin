@@ -1,1 +1,1 @@
-export { lingui } from './vite-plugin-lingui';
+export { lingui } from './vite-plugin';

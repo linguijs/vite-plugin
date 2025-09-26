@@ -1,11 +1,12 @@
 {
   "name": "@linguijs/vite-plugin",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "scripts": {
     "prepublish": "pnpm run build",
     "dev": "unbuild --stub",
     "build": "unbuild",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "release": "./release.sh"
   },
   "files": [
     "dist"

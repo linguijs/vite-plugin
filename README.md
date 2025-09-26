@@ -32,4 +32,5 @@ export default defineConfig({
 ```
 
 ## License
+
 The Lingui Vite Plugin is open-sourced software licensed under the [MIT license](LICENSE.md).

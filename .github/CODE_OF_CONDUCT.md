@@ -6,4 +6,3 @@ The code of conduct is derived from the Ruby code of conduct
 - Participants must ensure that their language and actions are free of personal attacks and disparaging personal remarks.
 - When interpreting the words and actions of others, participants should always assume good intentions.
 - Behavior that can be reasonably considered harassment will not be tolerated.
-
